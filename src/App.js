@@ -15,7 +15,7 @@ function App() {
       </div>
       <div id = "selectedArmy">{/*left side*/}
       </div>
-      <div id = "unitsAvailable">{/*right side*/}
+      <div id = "unitsAvailable">{/*right side */}
       </div>
 
     </div>
