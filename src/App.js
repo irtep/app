@@ -30,7 +30,6 @@ class App extends Component {
     console.log('state: ', this.state);
     // if change in faction
     if (this.state.faction !== '' && this.state.faction !== this.state.factionShowing) {
-      document.getElementById('unitsAvailable').innerHTML = this.state.faction;
       this.setState({factionShowing: this.state.faction});
     }
   }
@@ -88,7 +87,18 @@ class App extends Component {
                 <p  id = "unitsSelected" className= "textBox"></p>
               </div>
               <div id = "rightBox" className= "grids">{/*right side*/}
-                <p  id = "unitsAvailable" className= "textBox"></p>
+                <p  id = "unitsAvailable" className= "textBox">
+                  {cards.map(card => {
+                    return (
+                      <Unit
+                      title={card}
+                      showing={this.state.factionShowing}
+                      cards = {cards}
+                      key = {card.name}
+                      />
+                    )
+                  })}
+                </p>
               </div>
           </div>
       </div>

@@ -2,18 +2,22 @@ import React, { Component } from "react";
 import '../App.css';
 
 class Unit extends Component {
-  constructor() {
-    super();
-  }
-  componentDidMount() {
-    console.log('props ', this.props);
-  }
-  componentDidUpdate() {
-  }
   render() {
+    let showThis = '';
+    if (this.props.showing !== '') {
+      showThis = '';
+      this.props.cards.forEach((item, i) => {
+        item.factions.forEach((it, ii) => {
+          if (this.props.showing === it) {
+            console.log('found: ', this.props.showing, item.name);
+            showThis = item.name;
+          }
+        });
+      });
+    }
     return(
       <div>
-      ok
+       {showThis}
       </div>
     );
   }
