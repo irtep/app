@@ -88,16 +88,29 @@ class App extends Component {
               </div>
               <div id = "rightBox" className= "grids">{/*right side*/}
                 <p  id = "unitsAvailable" className= "textBox">
+                  {/*cards.map(card => {
+                    card.factions.forEach((item, i) => {
+                      if (this.state.factionShowing !== '') {
+                        console.log('hit');
+                        return (
+                          <Unit
+                          title={card}
+                          key = {card.name}
+                          />
+                        )
+                      }
+                    });
+                  })*/}
                   {cards.map(card => {
-                    return (
-                      <Unit
-                      title={card}
-                      showing={this.state.factionShowing}
-                      cards = {cards}
-                      key = {card.name}
-                      />
-                    )
-                  })}
+                        return (
+                          <Unit
+                          title={card}
+                          key = {card.name}
+                          factionShowing = {this.state.factionShowing}
+                          />
+                        )
+                      }
+                  )}
                 </p>
               </div>
           </div>
